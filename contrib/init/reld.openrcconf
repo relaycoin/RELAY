@@ -1,0 +1,26 @@
+# /etc/conf.d/reld: config file for /etc/init.d/reld
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/rel/rel.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/reld"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/reld.pid"
+
+# Where to write reld data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/reld"
+
+# User and group to own reld process
+#BITCOIND_USER="rel"
+#BITCOIND_GROUP="rel"
+
+# Path to reld executable
+#BITCOIND_BIN="/usr/bin/reld"
+
+# Nice value to run reld under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

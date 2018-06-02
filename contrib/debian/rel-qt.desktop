@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=REL
+Comment=REL P2P Cryptocurrency
+Comment[fr]=REL, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=REL, eşten eşe kriptografik sanal para birimi
+Exec=rel-qt %u
+Terminal=false
+Type=Application
+Icon=rel128
+MimeType=x-scheme-handler/rel;
+Categories=Office;Finance;

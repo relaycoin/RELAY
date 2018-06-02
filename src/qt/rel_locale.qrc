@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/rel_bg.qm</file>
+        <file alias="de">locale/rel_de.qm</file>
+        <file alias="en">locale/rel_en.qm</file>
+        <file alias="es">locale/rel_es.qm</file>
+        <file alias="fi">locale/rel_fi.qm</file>
+        <file alias="fr">locale/rel_fr.qm</file>
+        <file alias="it">locale/rel_it.qm</file>
+        <file alias="ja">locale/rel_ja.qm</file>
+        <file alias="pl">locale/rel_pl.qm</file>
+        <file alias="pt">locale/rel_pt.qm</file>
+        <file alias="ru">locale/rel_ru.qm</file>
+        <file alias="sk">locale/rel_sk.qm</file>
+        <file alias="sv">locale/rel_sv.qm</file>
+        <file alias="vi">locale/rel_vi.qm</file>
+        <file alias="zh_CN">locale/rel_zh_CN.qm</file>
+        <file alias="zh_TW">locale/rel_zh_TW.qm</file>
+    </qresource>
+</RCC>
