@@ -1,7 +1,7 @@
 - RELAY Coin Specification
 * Type : PoW
 * Algorithm : X11
-* Block Time : 3 Seconds
+* Block Time : 10 Seconds
 * Masternode Requirements : 5,000 REL
 * Maturity : 50 Confirmations
 * Premine : 2%
