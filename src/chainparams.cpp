@@ -51,8 +51,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "2018-05-22 - RELAY COIN is online made RELAY COIN Developer.";
-    const CScript genesisOutputScript = CScript() << ParseHex("040d2f8f511659b62e749dc221a50e8b129a4d084257a541ba256374066e7a82ac33155e593ffde58798a111f9670691d7fd0ca926385094de2e09dee0d51a5b9e") << OP_CHECKSIG;
+    const char* pszTimestamp = "2018-06-05 - RELAY COIN is online made RELAY COIN Developer.";
+    const CScript genesisOutputScript = CScript() << ParseHex("049907b5c96fc9ad9c300cda404593e96515bc8dafa58ac5b358227f6d5c6a40e1e0b174ab309bf3f8afdf7158fb228487a71d63aa5001b2b73d7efc81d6c75218") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -76,11 +76,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-		(0, uint256("0x00000b9c2a2385f4bc0258a7de3ab8e643402333c2bf349bae032f08275a0fc3"))
+		(0, uint256("0x000001824854545e3cebbe5509cce63c3bca8d297939a4d3b0e278f5f968ff4c"))
 		;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1526947200,
+    1528156800,
     0,
     0
 };
@@ -112,7 +112,7 @@ public:
         pchMessageStart[1] = 0x04;
         pchMessageStart[2] = 0x15;
         pchMessageStart[3] = 0x14;
-        vAlertPubKey = ParseHex("04fff6e7c3acdb5241bb57ce5bd43d26d83d6d45f5440867083f11a27060f23cba5011b7da03b2c307432f3249a85c2d1526ebe60c9480919490eb827838155e1c");
+        vAlertPubKey = ParseHex("0482ef3be328f13cfe37eaf156934c89d54f6c9f868d972550fd2ac3fb7e14e844b781d8a524668e0d514aef5b33025a1ec24a44713bd5a39fba40025b20cd81cc");
         nDefaultPort = 27275;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
         nSubsidyHalvingInterval = 210000;
@@ -122,7 +122,7 @@ public:
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60;
-        nTargetSpacing = 3;
+        nTargetSpacing = 10;
         nLastPOWBlock = 999999999;
         nMaturity = 50;
         nMasternodeCountDrift = 20;
@@ -130,20 +130,20 @@ public:
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 10000000000 * COIN;
 		
-        genesis = CreateGenesisBlock(1526947200, 2128059, 0x1e0ffff0, 1, 0 * COIN);
-        hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000b9c2a2385f4bc0258a7de3ab8e643402333c2bf349bae032f08275a0fc3"));
-        assert(genesis.hashMerkleRoot == uint256("0xb1e47c0f2691058f46fa4accedddbd1a6055359e5b84d4783eef7117fc7e2cdf"));
+        genesis = CreateGenesisBlock(1528156800, 128255, 0x1e0ffff0, 1, 0 * COIN);
+		hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x000001824854545e3cebbe5509cce63c3bca8d297939a4d3b0e278f5f968ff4c"));
+        assert(genesis.hashMerkleRoot == uint256("0xed7c7a6a0f2350e8f651a43356f8d64f4b12bec17b1cb8e3769e929007d014b3"));
         vFixedSeeds.clear();
         vSeeds.clear();
 		vSeeds.push_back(CDNSSeedData("207.148.5.165", "207.148.5.165"));
         vSeeds.push_back(CDNSSeedData("140.82.35.244", "140.82.35.244"));
         vSeeds.push_back(CDNSSeedData("45.32.99.20", "45.32.99.20"));
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 60);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 14);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 162);
-        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2B)(0x31)(0x1E).convert_to_container<std::vector<unsigned char> >();
-        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x31)(0xE4)(0x4A).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x05)(0x1B)(0x3A)(0x2E).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x05)(0x3C)(0xEA)(0x3A).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x76).convert_to_container<std::vector<unsigned char> >();
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
         fRequireRPCPassword = true;
@@ -157,7 +157,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "043ec3f5ca2eed5ceb8d91abae898ed8c2b424d3fcd53f2548d5ce30981212acac9fb3294117f168618a14447f4055b841dab867948d71d132195084ea1de5697a";
+        strSporkKey = "0445a3e07646e1e37f993943e0f697fa2314f763a30613c8d26834b9f55015e578c4cec634764c8746c1f1a307fc31ff8b5f793262b0fb7df664c99821aacdac0d";
 		nStartMasternodePayments = 1510272000;
 
 		CBitcoinAddress address;
